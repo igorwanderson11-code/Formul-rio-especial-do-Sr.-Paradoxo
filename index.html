@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Formulário do Sr. Paradoxo</title>
+<style>
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+button{
+padding:10px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Formulário Especial</h1>
+
+<p>1 - Qual ano terminou a Segunda Guerra Mundial?</p>
+
+<input type="radio" name="q1" value="1945">1945<br>
+<input type="radio" name="q1" value="1939">1939<br><br>
+
+<button onclick="corrigir()">Enviar</button>
+
+<h2 id="resultado"></h2>
+
+<script>
+
+function corrigir(){
+
+let resposta = document.querySelector('input[name="q1"]:checked');
+
+if(resposta && resposta.value=="1945"){
+document.getElementById("resultado").innerText="✔ Aprovado";
+}else{
+document.getElementById("resultado").innerText="❌ Reprovado";
+}
+
+}
+
+document.addEventListener("visibilitychange", function(){
+if(document.hidden){
+alert("⚠️ Detectamos que você saiu da página!");
+}
+});
+
+</script>
+
+</body>
+</html>
